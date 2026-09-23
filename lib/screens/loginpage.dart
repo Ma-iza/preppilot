@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dashboard.dart';
 
 class Loginpage extends StatelessWidget{
   const Loginpage({super.key});
@@ -21,8 +22,28 @@ class Loginpage extends StatelessWidget{
                 border:OutlineInputBorder(),
               ),
             ),
+            const SizedBox(height:15),
+            TextField(
+              decoration:const InputDecoration(
+                labelText:"Password",
+                border:OutlineInputBorder(),
+              ),
+            ),
+            const SizedBox(height:20),
+            ElevatedButton(
+              onPressed:() {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder:(context) => const Dashboardpage(),
+                    ),
+                );
+              },
+              child:const Text("Login"),
+            ),
           ],
-        )),
+        ),
+      ),
     );
   }
 }
